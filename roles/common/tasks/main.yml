@@ -1,0 +1,33 @@
+---
+- name: Ensure directory for GPG keys exists
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+
+- name: Ensure GPG key is stored in keyring
+  ansible.builtin.apt_key:
+    url: "{{ common_key_url }}"
+    keyring: "{{ common_keyring_path }}"
+  when: common_key_url is defined and common_keyring_path is defined
+
+- name: Ensure APT repository is present
+  ansible.builtin.apt_repository:
+    repo: "{{ common_repo }}"
+    state: present
+    filename: "{{ common_filename }}"
+    update_cache: false
+  when: common_repo is defined and common_filename is defined
+
+- name: Ensure required package is installed
+  ansible.builtin.apt:
+    name: "{{ common_package_name }}"
+    state: present
+    update_cache: true
+  when: common_package_name is defined
+
+- name: Hold installed package from being upgraded
+  ansible.builtin.dpkg_selections:
+    name: "{{ common_package_name }}"
+    selection: hold
+  when: common_package_name is defined

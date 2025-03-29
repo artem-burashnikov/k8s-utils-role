@@ -1,0 +1,10 @@
+---
+- name: Install cri-o runtime
+  ansible.builtin.include_role:
+    name: common
+  vars:
+    common_key_url: "{{ crio_key_url }}"
+    common_keyring_path: "{{ crio_keyring_path }}"
+    common_repo: "{{ crio_repo }}"
+    common_filename: "{{ crio_filename }}"
+    common_package_name: "{{ crio_package_name }}"

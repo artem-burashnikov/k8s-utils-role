@@ -1,0 +1,7 @@
+---
+- name: Install cri-o runtime and Kubernetes tools on Ubuntu hosts
+  hosts: all
+  become: true
+  roles:
+    - role: crio
+    - role: k8s_tools

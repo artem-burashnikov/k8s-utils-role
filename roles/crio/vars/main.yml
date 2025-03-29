@@ -1,0 +1,6 @@
+---
+crio_key_url: "https://download.opensuse.org/repositories/isv:/cri-o:/stable:/{{ crio_version }}/deb/Release.key"
+crio_keyring_path: "/etc/apt/keyrings/cri-o-apt-keyring.gpg"
+crio_repo: "deb [signed-by=/etc/apt/keyrings/cri-o-apt-keyring.gpg] https://download.opensuse.org/repositories/isv:/cri-o:/stable:/{{ crio_version }}/deb/ /"
+crio_filename: "cri-o"
+crio_package_name: "cri-o"

@@ -1,0 +1,11 @@
+all:
+  hosts:
+    master:
+      ansible_host: master_host
+      ansible_port: master_port
+    worker1:
+      ansible_host: worker1_host
+      ansible_port: worker1_port
+    worker2:
+      ansible_host: worker2_host
+      ansible_port: worker2_port

@@ -1,0 +1,4 @@
+# See https://docs.ansible.com/ansible/2.8/user_guide/playbooks_best_practices.html#variables-and-vaults
+---
+ansible_user: root
+ansible_password: "{{ vault_ansible_password }}"

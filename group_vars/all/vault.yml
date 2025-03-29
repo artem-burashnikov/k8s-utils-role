@@ -1,0 +1,4 @@
+---
+# See more on how to encyrpt your password with Ansible vault:
+# https://docs.ansible.com/ansible/latest/tips_tricks/ansible_tips_tricks.html#tip-for-variables-and-vaults
+vault_ansible_password: encrypt_me # or use ssh keys

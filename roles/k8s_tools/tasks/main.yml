@@ -1,0 +1,10 @@
+---
+- name: Install Kubernetes utilities
+  ansible.builtin.include_role:
+    name: common
+  vars:
+    common_key_url: "{{ k8s_tools_key_url }}"
+    common_keyring_path: "{{ k8s_tools_keyring_path }}"
+    common_repo: "{{ k8s_tools_repo }}"
+    common_filename: "{{ k8s_tools_filename }}"
+    common_package_name: "{{ k8s_tools_package_name }}"

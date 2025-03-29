@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: a.burashnikov
+  description: "A common role that installs a package on Ubuntu host."
+  license: Unlicense
+  min_ansible_version: "2.16"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - "jammy" # 22.04 LTS
+
+dependencies: []

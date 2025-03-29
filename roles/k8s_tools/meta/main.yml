@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: a.burashnikov
+  description: "Role to install Kubernetes utilities: kubelet, kubeadm and kubectl."
+  license: Unlicense
+  min_ansible_version: "2.16"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - "jammy" # 22.04 LTS
+
+dependencies: []
