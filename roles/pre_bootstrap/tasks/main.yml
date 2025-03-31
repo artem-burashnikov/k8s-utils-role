@@ -1,0 +1,29 @@
+---
+- name: Ensure IPv4 packet forwarding is enabled
+  ansible.posix.sysctl:
+    name: net.ipv4.ip_forward
+    value: '1'
+    sysctl_set: true
+    state: present
+    reload: true
+
+- name: Ensure the br_netfilter kernel module is enabled
+  community.general.modprobe:
+    name: br_netfilter
+    state: present
+
+- name: Ensure the overlay kernel module is enabled
+  community.general.modprobe:
+    name: overlay
+    state: present
+
+- name: Ensure cri-o service is enabled and started
+  ansible.builtin.service:
+    name: crio.service
+    state: started
+
+- name: Ensure Kubelet service is enabled and started
+  ansible.builtin.service:
+    name: kubelet
+    enabled: true
+    state: started
