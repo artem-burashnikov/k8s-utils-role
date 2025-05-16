@@ -1,6 +1,5 @@
 ---
-- name: |
-    Install cri-o runtime and Kubernetes tools on Ubuntu hosts and pre-bootstrap a k8s cluster
+- name: Install cri-o runtime and Kubernetes tools on Ubuntu hosts and pre-bootstrap a k8s cluster
   hosts: all
   become: true
   roles:
